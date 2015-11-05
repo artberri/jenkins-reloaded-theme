@@ -3,8 +3,7 @@
 
     jQuery(function($) {
 
-        var images = require('./images'),
-            myBaseUrl = $('script[src$="reloaded.min.js"]').attr('src').replace('reloaded.min.js','');
+        var images = require('./images');
 
         $('#jenkins #side-panel-content .task img').css({
             position: 'relative',
@@ -19,7 +18,7 @@
         });
 
         // Replace icons
-        images.replace(myBaseUrl);
+        images.replace();
 
     });
 }(jQuery));
