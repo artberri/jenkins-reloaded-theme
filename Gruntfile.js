@@ -11,8 +11,18 @@ module.exports = function(grunt) {
             },
             all: {
                 files: {
-                    'dist/reload.min.js': ['src/reload.js']
+                    'dist/reloaded.min.js': ['src/reloaded.js']
                 }
+            }
+        },
+        copy: {
+            js: {
+                src: 'src/reloaded.js',
+                dest: 'dist/reloaded.js',
+            },
+            images: {
+                src: 'src/images/*',
+                dest: 'dist/images/',
             }
         },
         scsslint: {
@@ -40,9 +50,17 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-          app: {
+          compass: {
             files: ['src/**/*.scss'],
             tasks: ['compass']
+          },
+          js: {
+            files: ['src/reloaded.js'],
+            tasks: ['uglify']
+          },
+          copy: {
+            files: ['src/reloaded.js', 'src/images/*'],
+            tasks: ['copy']
           }
         }
     });
@@ -53,11 +71,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Tasks
     grunt.registerTask('lint', ['scsslint']);
     grunt.registerTask('test', ['lint']);
     grunt.registerTask('serve', ['connect:server', 'watch']);
-    grunt.registerTask('build', ['uglify', 'compass']);
+    grunt.registerTask('build', ['copy', 'uglify', 'compass']);
     grunt.registerTask('default', ['serve']);
 };

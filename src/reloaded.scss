@@ -1,22 +1,27 @@
 @import 'compass/reset';
 @import 'compass/css3';
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
 
 #jenkins {
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 15px;
     line-height: 1.42857143;
-    color: #54565b;
+    color: #777;
     background-color: #fff;
 
     :focus {
         outline: none;
     }
 
+    body, table, form, td, th, p {
+        color: #777;
+    }
+
     a,
     a:visited {
-        color: #7f8fa4;
+        color: #555;
+        text-decoration: none;
 
         &:focus,
         &:hover {
@@ -109,7 +114,7 @@
     }
 
     table.pane {
-        border: 1px solid #dce0e6;
+        border: 0;
     }
 
     .bigtable {
@@ -274,13 +279,13 @@
     }
 
     #page-body {
-        padding-top: 20px;
-        background: #eaebec;
+        padding-top: 0;
+        background: #fff;
     }
 
     #main-panel,
     #side-panel {
-        background: #eaebec;
+        background: #fff;
         display: block;
     }
 
@@ -288,6 +293,55 @@
     #side-panel-content {
         background: #fff;
         padding: 16px;
+        margin: 0;
+    }
+
+    #main-panel-content {
+        padding-left: 30px;
+    }
+
+    #side-panel-content {
+        padding: 0;
+        border-right: 1px solid #eaebec;
+
+        .task {
+            height: 42px;
+            line-height: 42px;
+            border-bottom: 1px solid #eaebec;
+            padding: 0;
+            background: #f7f8fa;
+            margin-bottom: 1px;
+
+            &:hover {
+                background: #eaebec;
+            }
+
+            a {
+                display: inline-block;
+                height: 42px;
+                line-height: 42px;
+
+                &:hover {
+                    color: #7f8fa4;
+                    text-decoration: none;
+                }
+
+                &.task-icon-link,
+                &:first-child {
+                    width: 15%;
+                    text-align: center;
+                }
+
+                &.task-link {
+                    width: 85%;
+                    color: #7f8fa4;
+                }
+            }
+        }
+    }
+
+    #tasks {
+        margin-bottom: 0;
     }
 
     #main-panel {
@@ -359,16 +413,20 @@
     }
 
     .fixedGridLayout #main-panel {
-        padding-left: 380px;
+        padding-left: 376px;
     }
 
     .pane-content {
         padding: 10px;
     }
 
-    #side-panel-content .pane-frame {
-        border-radius: 0;
-        border: 1px solid #dce0e6;
+    #side-panel-content {
+        .pane-frame {
+            border-radius: 0;
+            border: 0;
+            border-bottom: 1px solid #dce0e6;
+            margin-bottom: 0;
+        }
     }
 
     .pane-header,
