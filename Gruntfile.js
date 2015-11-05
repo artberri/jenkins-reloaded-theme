@@ -21,7 +21,9 @@ module.exports = function(grunt) {
                 dest: 'dist/reloaded.js',
             },
             images: {
-                src: 'src/images/*',
+                expand: true,
+                cwd: 'src/images/',
+                src: '**',
                 dest: 'dist/images/',
             }
         },
