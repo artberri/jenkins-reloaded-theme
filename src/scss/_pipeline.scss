@@ -1,0 +1,62 @@
+#jenkins {
+
+    #build-pipeline-plugin-content {
+        @include border-radius(0);
+        background: transparent;
+
+        .rounded {
+            @include border-radius(0);
+            @include box-shadow(2px 2px 2px #888);
+        }
+
+        .PROJECT {
+            .header-name {
+                background: #efefef;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                    position: relative;
+                    top: 3px;
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .PROJECT,
+        .build-card {
+            @include border-radius(0);
+
+            .header {
+                @include border-radius(0);
+            }
+        }
+
+        a {
+            color: #000;
+        }
+
+        .pipelineGroup {
+            background: #efefef;
+            @include border-radius(0);
+        }
+
+        .revision {
+            background: #fff;
+
+            .build-body {
+                background: #fff;
+            }
+
+            .header {
+                background: #f8f8f8;
+            }
+
+            .build-number-pipeline {
+                padding: 10px;
+            }
+        }
+    }
+
+}

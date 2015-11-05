@@ -1,0 +1,51 @@
+#jenkins {
+
+    #menuSelector {
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid #c5d0de;
+        background: transparent;
+
+        &:hover,
+        &:focus {
+            border-top: 7px solid #fff;
+        }
+    }
+
+    .yuimenu .bd {
+        @include box-shadow(0 9px 10px #bbb);
+        background: #2b333d;
+        border: 0;
+
+        a {
+            color: #c5d0de;
+            position: relative;
+            top: 3px;
+
+            &:hover,
+            &:focus {
+                color: #fff;
+            }
+        }
+
+        .yuimenuitem {
+            font-size: 15px;
+            height: 40px;
+
+            img {
+                position: relative;
+                top: 3px;
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        .yuimenuitem-selected {
+            background: #24272d;
+            border: 0;
+        }
+    }
+
+}

@@ -1,0 +1,50 @@
+#jenkins {
+
+    #side-panel-content {
+        padding: 0;
+        border-right: 1px solid #eaebec;
+
+        .task {
+            height: 42px;
+            line-height: 42px;
+            border-bottom: 1px solid #eaebec;
+            padding: 0;
+            background: #f7f8fa;
+            margin-bottom: 1px;
+
+            &:hover {
+                background: #eaebec;
+            }
+
+            a {
+                display: inline-block;
+                height: 42px;
+                line-height: 42px;
+
+                &:hover {
+                    color: #7f8fa4;
+                    text-decoration: none;
+                }
+
+                &.task-icon-link,
+                &:first-child {
+                    width: 15%;
+                    text-align: center;
+                }
+
+                &.task-link {
+                    width: 85%;
+                    color: #7f8fa4;
+                }
+            }
+        }
+
+        .pane-frame {
+            border-radius: 0;
+            border: 0;
+            border-bottom: 1px solid #dce0e6;
+            margin-bottom: 0;
+        }
+    }
+
+}

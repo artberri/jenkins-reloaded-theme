@@ -1,0 +1,111 @@
+@import 'compass/reset';
+@import 'compass/css3';
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
+
+@import 'base';
+@import 'header';
+@import 'menu';
+@import 'sidebar';
+
+#jenkins {
+
+    table.pane {
+        border: 0;
+    }
+
+    .bigtable {
+        th {
+            background: #f7f8fa;
+        }
+
+        tr {
+            border: 1px solid #dce0e6;
+        }
+    }
+
+    .bottom-sticker,
+    #bottom-sticker {
+        padding-right: 30px;
+    }
+
+    #breadcrumbBar,
+    #footer-container,
+    .top-sticker-inner {
+        background-color: #eaebec;
+    }
+
+    #right-top-nav {
+        height: 2.5em;
+        line-height: 2.5em;
+
+        a {
+            color: #c5d0de;
+
+            &:focus,
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    #page-body {
+        padding-top: 0;
+        background: #fff;
+    }
+
+    #main-panel,
+    #side-panel {
+        background: #fff;
+        display: block;
+    }
+
+    #main-panel-content,
+    #side-panel-content {
+        background: #fff;
+        margin: 0;
+    }
+
+    #main-panel-content {
+        padding: 16px 16px 16px 30px;
+    }
+
+    #tasks {
+        margin-bottom: 0;
+    }
+
+    #main-panel {
+        h1 img {
+            width: 36px !important;
+            height: 36px !important;
+            position: relative;
+            top: 9px;
+        }
+    }
+
+    .fixedGridLayout #main-panel {
+        padding-left: 376px;
+    }
+
+    .pane-content {
+        padding: 10px;
+    }
+
+    .pane-header,
+    #projectstatus .header {
+        background-color: #f7f8fa;
+        padding: 16px;
+        margin-bottom: 0;
+        border: 0;
+        border-bottom: 1px solid #dce0e6;
+        color: #7f8fa4;
+    }
+
+    .task-icon-link img {
+        top: 9px;
+        position: relative;
+    }
+
+}
+
+

@@ -1,0 +1,80 @@
+#jenkins {
+
+    #header {
+        background: url('http://cdn1.hubspot.com/hub/51294/images/jenkins_logo.png') no-repeat #fff 10px 5px;
+        background-size: 160px;
+        height: 60px;
+
+        .login {
+            line-height: 2.5em;
+
+            span,
+            a,
+            a:visited {
+                color: #7f8fa4;
+            }
+
+            &:focus,
+            a:hover {
+                color: #4c4e54;
+            }
+        }
+    }
+
+    #jenkins-head-icon,
+    #jenkins-name-icon {
+        visibility: hidden;
+    }
+
+    #search-box {
+        @include box-shadow(none);
+        @include border-radius(0);
+
+        margin-top: 5px;
+        height: 36px;
+        padding: 5px 10px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #7f8fa4;
+        background: #fff;
+        border-color: #e7e9ed;
+    }
+
+    #breadcrumbs {
+        background: #2b333d;
+        border: 0;
+        height: 2.5em;
+        list-style: none;
+
+        li {
+            line-height: 2.5em;
+            height: 2.5em;
+            color: #c5d0de;
+
+            a {
+                line-height: 2.5em;
+
+                &:link,
+                &:visited {
+                    color: #c5d0de;
+                }
+
+                &:hover,
+                &:focus {
+                    color: #fff;
+                }
+            }
+        }
+
+        a.inside {
+            padding-right: 25px;
+        }
+    }
+
+    #breadcrumbs li:hover,
+    a.breadcrumbBarAnchor.mouseIsOverMenuSelector {
+        background: #24272d;
+        color: #fff;
+    }
+
+}

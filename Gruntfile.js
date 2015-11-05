@@ -11,15 +11,18 @@ module.exports = function(grunt) {
             },
             all: {
                 files: {
-                    'dist/reloaded.min.js': ['src/reloaded.js']
+                    'dist/reloaded.min.js': ['dist/reloaded.js']
+                }
+            }
+        },
+        browserify: {
+            dist: {
+                files: {
+                  'dist/reloaded.js': ['src/js/reloaded.js']
                 }
             }
         },
         copy: {
-            js: {
-                src: 'src/reloaded.js',
-                dest: 'dist/reloaded.js',
-            },
             images: {
                 expand: true,
                 cwd: 'src/images/',
@@ -29,7 +32,7 @@ module.exports = function(grunt) {
         },
         scsslint: {
             allFiles: [
-                'src/**/*.scss'
+                'src/scss/**/*.scss'
             ],
             options: {
                 config: '.scss-lint.yml',
@@ -43,6 +46,9 @@ module.exports = function(grunt) {
                 }
             }
         },
+        eslint: {
+            target: ['src/js/**/*.js']
+        },
         connect: {
             server: {
               options: {
@@ -53,12 +59,12 @@ module.exports = function(grunt) {
         },
         watch: {
           compass: {
-            files: ['src/**/*.scss'],
+            files: ['src/scss/**/*.scss'],
             tasks: ['compass']
           },
           js: {
-            files: ['src/reloaded.js'],
-            tasks: ['uglify']
+            files: ['src/js/**/*.js'],
+            tasks: ['browserify', 'uglify']
           },
           copy: {
             files: ['src/reloaded.js', 'src/images/*'],
@@ -74,11 +80,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-eslint');
 
     // Tasks
-    grunt.registerTask('lint', ['scsslint']);
+    grunt.registerTask('lint', ['scsslint', 'eslint']);
     grunt.registerTask('test', ['lint']);
     grunt.registerTask('serve', ['connect:server', 'watch']);
-    grunt.registerTask('build', ['copy', 'uglify', 'compass']);
+    grunt.registerTask('build', ['test', 'copy', 'browserify', 'uglify', 'compass']);
     grunt.registerTask('default', ['serve']);
 };
