@@ -20,5 +20,9 @@
         // Replace icons
         images.replace();
 
+        // Fix subtasks in menu
+        $('.subtasks').each(function() {
+            $(this).parent().css("height", "100%");
+        })
     });
 }(jQuery));
